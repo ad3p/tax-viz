@@ -1,0 +1,270 @@
+<html>
+    <head>
+        <title>
+            Tax in India
+        </title>
+        <link rel="stylesheet" href="../style/style.css">
+        <!-- <meta http-equiv="refresh" content="10"> -->
+
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="title" content="Tax in India, visualized"/>
+        <meta name="description" content="See taxes in action. Visualize how your income is taxes according to the New Tax Regime. See income and taxes in easy to understand graphs."/>
+        
+        <link rel="icon" href="../icons/favicon.ico"/>
+
+
+        
+    </head>
+    <body>
+        <div id="header">
+            <div class="top-header-bar">
+                <h1>THE INDIAN TAX SYSTEM</h1>
+                <ul class="top-header-menu">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../about.html">ABOUT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="paper">
+            
+
+            <div id="graphBody">
+                <!-- graph, text, slider -->
+                <div id="taxGS">
+
+                    <div id="finYear">
+                        <a href="ntr.html"><button class="navButton">FY 2024-25 (New Tax Regime)</button></a>
+                        <a href="otr.html"><button class="navButton notActive">See Old Tax Regime &#187;</button></a>
+        
+        
+                    </div>
+
+                <!-- percentage text -->
+                <div id="taxGraph" class="z2">
+                        <div id="" class="bracket0 pText">
+                            0%
+                        </div>
+                        <div id="" class="bracket1 pText">
+                            5%
+                        </div>
+                        <div id="" class="bracket2 pText">
+                            10%
+                        </div>
+                        <div id="" class="bracket3 pText">
+                            15%
+                        </div>
+                        <div id="" class="bracket4 pText">
+                            20%
+                        </div>
+                        <div id="" class="bracket5 pText">
+                            30%
+                        </div>
+                </div>
+
+                <!-- money boxes -->
+                <div id="taxGraph">
+                    <div id="bracket0" class="bracket0 taxBracket">
+                        
+                    </div>
+                    
+
+                    <div id="bracket1" class="bracket1 taxBracket">
+                        <!-- 5% -->
+                    </div>
+
+
+                    <div id="bracket2" class="bracket2 taxBracket">
+                        <!-- 10% -->
+                    </div>
+                    
+                    
+                    <div id="bracket3" class="bracket3 taxBracket">
+                        <!-- 15% -->
+                    </div>
+                    
+                    
+                    <div id="bracket4" class="bracket4 taxBracket">
+                        <!-- 20% -->
+                    </div>
+                    
+                    
+                    <div id="bracket5" class="bracket5 taxBracket">
+                        <!-- 30% -->
+                    </div>
+                </div>
+
+                <!-- income text -->
+                <div id="taxGraph" class="">
+                    <div id="" class="bracket0">
+                        0
+                    </div>
+                    <div id="" class="bracket1">
+                        3L
+                    </div>
+                    <div id="" class="bracket2">
+                        7L
+                    </div>
+                    <div id="" class="bracket3">
+                        10L
+                    </div>
+                    <div id="" class="bracket4">
+                        12L
+                    </div>
+                    <div id="" class="bracket5">
+                        15L+
+                    </div>
+                </div>
+
+                <div id="sliderBar">
+                    <input type="range" min="0" max="20" value="10" step="0.1" class="moneySlider" id="incomeSlider">
+                </div>
+
+
+                <div id="legend">
+                    <h3>LEGEND</h3>
+                    Each box represent Rs. 10,000. <br/>
+                    <button class="rr">.</button> This money the government take, 
+                <button class="gg">.</button> This money you retain<br/>
+
+                </div>
+
+                </div>
+                <!-- #taxGS -->
+
+                <div id="taxTXT">
+
+                    <div id="deductibles">
+                        <h1>DEDUCTIBLES</h1>
+                        Standard Deduction : Rs 75,000 <input type="checkbox" checked> <br/>
+                        <small>This standard deduction is automatically applied to the income of eligible individuals.</small>
+                    </div>
+
+
+                    <div id="taxCalculator">
+                        <h1>CALCULATOR</h1>
+                                <!-- <br/> -->
+                                <table>
+                                    <tr>
+                                        <th>PARTICULARS</th>
+                                        <th>RATE (%)  </th>
+                                        <th>AMOUNT </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">INCOME(L)</td>
+                                        <td class="rate"> </td>
+                                        <td id="d-income" class="mGain">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">BRACKETS</td>
+                                        <td class="rate"> </td>
+                                        <td id="d-" class=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">0L - 3L  </td>
+                                        <td class="rate">0%</td>
+                                        <td id="d-tax0" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 3L - 7L </td>
+                                        <td class="rate">5%</td>
+                                        <td id="d-tax1" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 7L - 10L </td>
+                                        <td class="rate">10%</td>
+                                        <td id="d-tax2" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 10L - 12L </td>
+                                        <td class="rate">15%</td>
+                                        <td id="d-tax3" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 12L - 15L </td>
+                                        <td class="rate">20%</td>
+                                        <td id="d-tax4" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> >15l </td>
+                                        <td class="rate">30%</td>
+                                        <td id="d-tax5" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">Taxable</td>
+                                        <td class="rate">AMt</td>
+                                        <td id="d-taxBCess" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">Cess </td>
+                                        <td class="rate">4%</td>
+                                        <td id="d-taxCess" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">Total tax:    </td>
+                                        <td class="rate"></td>
+                                        <td id="d-total" class="mLoss">0</td>
+
+
+                                    </tr>
+                                </table>
+
+
+
+                        
+        
+                        </div>
+                        <!-- tax calculator -->
+
+                        <div id="summary">
+                            <h1>
+                                SUMMARY
+                            </h1>
+            
+                            Your Income is : <span id="incomeOut" style="color: green;"> 0 </span> lakh.<br/>
+                            Your taxable income is: <span id="taxbleAmt" style="color: green;"> 0</span> lakh. <br/>
+                            You'll be liable for a tax of Rs. <span id="d-total2" style="color: red;"> 0 </span>.
+        
+        
+                        </div>
+
+
+                </div>
+
+                
+            </div>
+            <!-- graphBody -->
+
+            <div id="afterGraph">
+                
+                
+
+                
+                
+                
+            </div>
+            
+            
+        </div>
+        <!-- paper -->
+
+        <br>
+        <div id="footer">
+            <div class="footer-bar">
+                <span class="pills"><span>#ad3p</span>  &#187; <span><a href="mailto:ad3p@proton.me?subject=Through%20Tax-Viz" class="mail" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -2 24 24" fill="none" stroke="#ffffd7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></span></span>
+                <span class="pills">Last updated: Aug 28,2024</span>
+            </div>
+        </div>
+        <script src="taxCalc.js"></script>
+        <!-- <script>
+   
+        </script> -->
+    </body>
+</html>
