@@ -143,7 +143,7 @@ div#footer > div.footer-bar > span.pills
     /* margin-left: 30px; */
     /* margin-top: 10px; */
 }
-
+/* 
 .notInMobile{
     margin-left :-50px;
     width:50px;
@@ -152,7 +152,7 @@ div#footer > div.footer-bar > span.pills
     justify-content: space-between;
     align-items: flex-end;
     color: #4e8571;
-}
+} */
 
 .taxBracket{
     height: calc(var(--bracket-height)*10);
@@ -423,9 +423,9 @@ h1{
     .z2{
         display: none !important; 
     }
-    .notInMobile{
+    /* .notInMobile{
         display: none;
-    }
+    } */
     /* #legend{
         margin-left:10px;
     } */
