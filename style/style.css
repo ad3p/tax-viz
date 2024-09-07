@@ -248,6 +248,10 @@ div#footer > div.footer-bar > span.pills
 
 }
 
+small{
+    color: #7c966b;
+}
+
 .mGain{
     color: #009255;
 }
@@ -312,7 +316,7 @@ h1{
 
 @media all and (max-width: 800px) {
     :root{
-        --bracket-width: 16px ;
+        --bracket-width: 4.5vw ;
         --bracket-height:14px;
 
 
@@ -329,6 +333,7 @@ h1{
     }
     #taxGS{
         margin-left:10px;
+        margin-right: 10px;
     }
     #graphBody{
         display: flex;
@@ -337,9 +342,12 @@ h1{
     
     }
     #taxTXT{
-        width: 97%;
+        width: calc(100% - 20px);
         margin-left: 10px;
         margin-right:10px;
+    }
+    table{
+        width: 100%;
     }
     /* #summary{
         margin-left: 10px;
@@ -371,8 +379,17 @@ h1{
     .top-header-bar ul.top-header-menu li{
         padding: 2px 34px;
     }
-    .notActive{
+    /* .notActive{
         display: none;
         
+    } */
+    .navButton{
+        color: var(--text-color-light);
+        font-size: 11px;
+        padding: 5px 5px;
+        margin-left: 4px;
+        margin-right: 4px;
+        
+    
     }
   }
