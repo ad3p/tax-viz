@@ -1,1 +1,350 @@
-This page is under construction.
+<html>
+    <head>
+        <title>
+            Old Tax Regime | Tax in India
+        </title>
+        <link rel="stylesheet" href="../style/styleOTR.css">
+        <!-- <meta http-equiv="refresh" content="10"> -->
+
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="title" content="Tax in India, visualized"/>
+        <meta name="description" content="See taxes in action. Visualize how your income is taxes according to the Old Tax Regime. See income and taxes in easy to understand graphs."/>
+        
+        <link rel="icon" href="../icons/favicon.ico"/>
+
+
+        
+    </head>
+    <body>
+        <div id="header">
+            <div class="top-header-bar">
+                <h1>THE INDIAN TAX SYSTEM</h1>
+                <ul class="top-header-menu">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../about.html">ABOUT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="paper">
+            
+
+            <div id="graphBody">
+                <!-- graph, text, slider -->
+                <div id="taxGS">
+
+                    <div id="finYear">
+                        <a href="ntr.html"><button class="navButton notActive">See New Tax Regime &#187;</button></a>
+                        <a href="otr.html"><button class="navButton">FY 2024-25 (Old Tax Regime)</button></a>
+        
+        
+                    </div>
+                    <div>
+                    
+
+                <!-- percentage text -->
+                <div id="taxGraph" class="z2">
+                    
+                        
+                    
+                        <div id="" class="bracket0 pText">
+                            0%
+                        </div>
+                        <div id="" class="bracket1 pText">
+                            5%
+                        </div>
+                        <div id="" class="bracket2 pText">
+                            20%
+                        </div>
+                        <div id="" class="bracket3 pText">
+                            30%
+                        </div>
+                       
+                </div>
+
+                <!-- money boxes -->
+                <div id="taxGraph">
+                    <div id="" class="notInMobile">
+                        <div id="" class="">
+                            250k
+                        </div>
+                        <div id="" class="">
+                            200k
+                        </div>
+                        <div id="" class="">
+                            150k
+                        </div>
+                        <div id="" class="">
+                            100k
+                        </div>
+                        <div id="" class="">
+                            50K
+                        </div>
+                        <div id="" class="">
+                            0
+                        </div>
+
+                    </div>
+                    <div id="bracket0" class="bracket0 taxBracket">
+                        
+                    </div>
+                    
+
+                    <div id="bracket1" class="bracket1 taxBracket">
+                        <!-- 5% -->
+                    </div>
+
+
+                    <div id="bracket2" class="bracket2 taxBracket">
+                        <!-- 20% -->
+                    </div>
+                    
+                    
+                    <div id="bracket3" class="bracket3 taxBracket">
+                        <!-- 30% -->
+                    </div>
+                    
+                    
+                    <!-- <div id="bracket4" class="bracket4 taxBracket"> -->
+                        <!-- 20% -->
+                    <!-- </div> -->
+                    
+                    
+                    <!-- <div id="bracket5" class="bracket5 taxBracket"> -->
+                        <!-- 30% -->
+                    <!-- </div> -->
+                </div>
+                </div>
+
+                <!-- income text -->
+                <div id="taxGraph" class="">
+                    <div id="" class="bracket0">
+                        0
+                    </div>
+                    <div id="" class="bracket1">
+                        2.5L
+                    </div>
+                    <div id="" class="bracket2">
+                        5L
+                    </div>
+                    <div id="" class="bracket3">
+                        10L+
+                    </div>
+                    <!-- <div id="" class="bracket4">
+                        12L
+                    </div>
+                    <div id="" class="bracket5">
+                        15L+
+                    </div> -->
+                </div>
+
+                <div id="sliderBar">
+                    <input type="range" min="0" max="20" value="10" step="0.1" class="moneySlider" id="incomeSlider">
+                </div>
+
+                <div id="afterGraph">
+                    <div id="legend">
+                        <h3>LEGEND</h3>
+                        Each box represent &#8377;  5,000.<br/>
+
+                        <button class="rr">.</button> This money the government take, 
+                    <button class="gg">.</button> This money you retain<br/>
+    
+                    </div>
+                    <div id="summary">
+                        <h1>
+                            SUMMARY
+                        </h1>
+        
+                        Your Income is : &#8377; <span id="incomeOut" style="color: green;"> 0 </span> lakh.<br/>
+                        <!-- Your Deductible amount is : <span id="dedxnAmt" style="color: green;"> 0 </span> lakh.<br/> -->
+                        Your taxable income is: &#8377; <span id="d-taxableIncome-2" style="color: green;"> 0</span> lakh. <br/>
+                        You'll be liable for a tax of &#8377; <span id="d-total2" style="color: red;"> 0 </span>.
+    
+    
+                    </div>
+
+                </div>
+                
+
+                </div>
+                <!-- #taxGS -->
+
+                <div id="taxTXT">
+
+                    <div id="deductibles">
+                        <h1>DEDUCTIBLES</h1>
+                        <div id="deductiblesList">
+                        Standard Deduction : Rs 50,000 <input type="checkbox" checked> <br/>
+                        <small>This standard deduction is automatically applied to the income of eligible individuals.</small><br/><br/>
+                        <!-- <h1>DEDUCTIBLES</h1> -->
+
+                        Section 80C : Basic Deduction<br/>
+                        <input id="d80C" type="number" min="0" max="150001" step="10000" class="inputNum"  placeholder="Maximum limit - Rs. 1,50,000" >  <br/>
+                        <small>Deduction on Investments like ELSS funds, NPS Scheme, ULIP, PPF etc.</small><br/>
+                        <br/>
+
+
+                        Section 80CCD(1B) : Additional Contribution to NPS<br/>
+                        <input id="d80CCD" type="number" min="0" max="50001" step="10000" class="inputNum"  placeholder="Maximum limit - Rs. 50,000" > <br/>
+                        <small>Contribution made to NPS(National Pension Scheme).</small><br/><br/>
+
+                        
+                        Section 80D : Medical Insurance<br/>
+                        <!-- <small>Deduction on Investments</small><br/> -->
+                        <input id="d80D" type="number" min="0" max="75001" step="5000" class="inputNum"  placeholder="Maximum limit - Rs. 25,000 + Rs. 50,000" >  <br/>
+                        <small>Medical premium and preventable health checkup fee. Self/Spouse/Children = Rs 25,000, Parents more than 60 years old - Rs 50,000</small><br/><br/>
+
+
+                        Section 80TTA - Interest on Saving Accounts<br/>
+                        <!-- <small>Deduction on Investments</small><br/> -->
+                        <input id="d80TTA" type="number" min="0" max="10001" step="1000" class="inputNum"  placeholder="Maximum limit - Rs. 10,000" >  <br/>
+                        <small>Deduction on Interest coming from saving accounts.</small><br/><br/>
+
+
+                        Section 80E - Interest on Education Loan <br/>
+                        <!-- <small>Deduction on Investments</small><br/> -->
+                        <input id="d80E" type="number" min="0" max="2000001" step="10000" class="inputNum"  placeholder="Maximum limit - No Limit" ><br/>
+                        <small>Deduction of interest paid on education loan taken for pursuing higher education.</small><br/><br/>
+
+
+                        Section 80EEA - Interest on Home Loan<br/>
+                        <!-- <small>Deduction on Investments</small><br/> -->
+                        <input id="d80EEA" type="number" min="0" max="150001" step="10000" class="inputNum"  placeholder="Maximum limit - Rs. 1,50,000" > <br/>
+                        <small>Deduction of interest paid on home loan upto Rs. 1.5 lakhs.</small><br/><br/>
+
+                        <small>
+                            There are other deduction available too like
+                            <ul>
+                                <li>Section 80DD - Deduction for Medical Treatment of a Dependent with Disability.</li>
+                                <li>Section 80EEB - Deduction on interest paid on Electric Vehicle Loan.</li>
+                                <li>Section 80G : Donation to Charity</li>
+                                <li>Section 80GG - Deduction on Rent paid when HRA is not received.</li>
+                                <li>Section 80GGC - Donation by Person to Political Parties</li>
+                                <li>Section 80U - Deduction for Disabled individuals</li>
+                                <li>Section 80RRB - Deduction on Income via Royalty of a Patent</li>
+                                <li>Section 80QQB - Deduction on Royalty Income of Authors</li>
+                            </ul>
+                        These have not been included in the calculator to make it simple. Kindly consult your accountant to see you all deduction and eligibility.
+                        <br/><br/>
+
+                        See eligibility criterion of 
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139903&searchFilter=&k=undefined&IsDlg=0" target="_blank">80C</a>, 
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139908&searchFilter=&k=undefined&IsDlg=0" target="_blank">80CCD(1B)</a>,
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139913&searchFilter=&k=undefined&IsDlg=0" target="_blank">80D</a>, 
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139981&searchFilter=&k=undefined&IsDlg=0" target="_blank">80TTA</a>, 
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139916&searchFilter=&k=undefined&IsDlg=0" target="_blank">80E</a>, 
+                        <a href="https://incometaxindia.gov.in/_layouts/15/dit/Pages/viewer.aspx?grp=Act&cname=CMSID&cval=102520000000139918&searchFilter=&k=undefined&IsDlg=0" target="_blank">80EEA</a>.
+
+
+
+                            
+
+                        </small>
+
+
+
+                    </div>
+                    </div>
+
+
+                    <div id="taxCalculator">
+                        <h1>CALCULATOR</h1>
+                                <!-- <br/> -->
+                                <table>
+                                    <tr>
+                                        <td class="rsn">INCOME (L)</td>
+                                        <td class="rate"> </td>
+                                        <td id="t-income" class="mGain">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">DEDUCTION (L)</td>
+                                        <td class="rate"> </td>
+                                        <td id="t-deduction" class="mGain">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn noBorder">TAXABLE </td>
+                                        <td class="rate noBorder"> INCOME</td>
+                                        <td id="t-taxableIncome" class="mGain noBorder">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>BRACKETs(OTR)</th>
+                                        <th>RATE (%)  </th>
+                                        <th>AMOUNT </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">0L - 2.5L  </td>
+                                        <td class="rate">0%</td>
+                                        <td id="t-tax0" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 2.5L - 5L </td>
+                                        <td class="rate">5%</td>
+                                        <td id="t-tax1" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> 5L - 10L </td>
+                                        <td class="rate">20%</td>
+                                        <td id="t-tax2" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn"> >10L </td>
+                                        <td class="rate">30%</td>
+                                        <td id="t-tax3" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">TAX AMOUNT</td>
+                                        <td class="rate"></td>
+                                        <td id="t-taxBeforeCess" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">CESS </td>
+                                        <td class="rate">4%</td>
+                                        <td id="t-taxCess" class="mLoss">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="rsn">TOTAL TAX</td>
+                                        <td class="rate"></td>
+                                        <td id="t-total" class="mLoss">0</td>
+
+
+                                    </tr>
+                                </table>
+
+
+
+                        
+        
+                        </div>
+                        <!-- tax calculator -->
+
+
+
+                </div>
+
+                
+            </div>
+            <!-- graphBody -->
+
+            
+            
+        </div>
+        <!-- paper -->
+
+        <div id="footer">
+            <div class="footer-bar">
+                <span class="pills"><span>#ad3p</span>  &#187; <span><a href="mailto:ad3p@proton.me?subject=Through%20Tax-Viz" class="mail" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -2 24 24" fill="none" stroke="#ffffd7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></span></span>
+                <span class="pills">Last updated: Sep 5,2024</span>
+            </div>
+        </div>
+        <script src="otrTaxCalc.js"></script>
+        <!-- <script>
+   
+        </script> -->
+    </body>
+</html>
