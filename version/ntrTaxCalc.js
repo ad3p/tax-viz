@@ -1,21 +1,42 @@
+// round and change to indian number system
+function indianNumSys(amount){
+    amount = Math.round((amount)*100)/100
+    var temp = [];
+    var ones = amount % 1000;
+    var tens = ((amount % 100000) - ones)/1000;
+    var huns = ((amount) - tens*1000 - ones)/100000;
+    temp = [huns,("0" + tens).slice(-2),("00" + Math.round(ones)).slice(-3)];
+    if(temp[0] == 0){
+        temp.shift();
+    }
+    return temp;
+}
+
+
 
 function calcTax(income){
 
-    
     incomeLakh = income * 1e5;
-    // document.write('hello');
+
     // standard deduction, cess rate
-    var stdDedxn = 0.75;
+    var deductionAmount = 75000;
     var cess = 0.04
-    var amt = income * 1e5 - stdDedxn * 1e5;
+
+    if(deductionAmount > incomeLakh){
+        // alert("Deductions are more than income.")
+        deductionAmount = incomeLakh;
+    }
+
+    var amt = incomeLakh - deductionAmount;
     
+    // tax according to each brackets
     var tax = [0,0,0,0,0,0];
     // brackets
     var b = [3,7,10,12,15];
     // tax rate for each bracket
     var r = [0,.05,.10,.15,.20,.30]
     // converting into lakh
-    for(let i=0; i<b.length;i++){
+    for(let i=0; i<b.length; i++){
         b[i] = b[i] * 1e5;
     }
     
@@ -37,13 +58,11 @@ function calcTax(income){
     tax[3] = tax[3] * r[3];
     tax[4] = tax[4] * r[4];
     tax[5] = tax[5] * r[5];
-    // console.log(tax[4]);
 
+    // Section 87 A
     if(amt <= 700000){
         tax[1] = 0;
-        // console.log("p");
     }
-    console.log(amt);
 
     // updating tax amount in html
     dIn.innerHTML = income;
@@ -62,26 +81,25 @@ function calcTax(income){
     dTBC.innerHTML = Math.round(totalTax * 100)/100;
     dTC.innerHTML = Math.round(cessAmt * 100)/100;
     dTt.innerHTML = Math.round((cessAmt + totalTax)*100)/100;
-    // console.log(b[5]);
-    // console.log((b[5] > incomeLakh ? incomeLakh : b[0]));
 
-    dTAmt.innerHTML = Math.round(amt*100)/10000000;
-    dTt2.innerHTML = Math.round((cessAmt + totalTax)*100)/100;
+    dTIn.innerHTML = Math.round(amt*100)/10000000;
+    dTt2.innerHTML = indianNumSys((cessAmt + totalTax));
 
-
-
+    // first bracket
     for(let i=0;i<((b[0] > incomeLakh ? incomeLakh : b[0]));i+=10000){
         bN[0].innerHTML += "<button class='gg'>.</button>";
     }
 
     for(let i=b[4];i<((b[4] < incomeLakh ? incomeLakh : b[4]))-tax[5];i+=10000){
         bN[5].innerHTML += "<button class='gg'>.</button>";
-        console.log("gg");
     }
+
+    // last bracket
     for(let i=10000;i<=tax[5];i+=10000){
         bN[5].innerHTML += "<button class='rr'>.</button>";
     }
 
+    // in between brackets
     for(let j=1; j<5;j++){
         for(let i=b[j-1];i<((b[j] > incomeLakh ? incomeLakh : b[j]))-tax[j];i+=10000){
             bN[j].innerHTML += "<button class='gg'>.</button>";
@@ -90,45 +108,37 @@ function calcTax(income){
         for(let i=10000;i<=tax[j];i+=10000){
             bN[j].innerHTML += "<button class='rr'>.</button>";
         }
-       
-
     }
     
     
 }
 
-var dIn = document.getElementById("d-income");
-var dT1 = document.getElementById("d-tax0");
-var dT2 = document.getElementById("d-tax1");
-var dT3 = document.getElementById("d-tax2");
-var dT4 = document.getElementById("d-tax3");
-var dT5 = document.getElementById("d-tax4");
-var dT6 = document.getElementById("d-tax5");
-var dTBC = document.getElementById("d-taxBCess");
-var dTC = document.getElementById("d-taxCess");
-var dTt = document.getElementById("d-total");
-var dTAmt = document.getElementById("taxbleAmt");
+// t - table
+// d - display
+
+var dIn = document.getElementById("t-income");
+var dT1 = document.getElementById("t-tax0");
+var dT2 = document.getElementById("t-tax1");
+var dT3 = document.getElementById("t-tax2");
+var dT4 = document.getElementById("t-tax3");
+var dT5 = document.getElementById("t-tax4");
+var dT6 = document.getElementById("t-tax5");
+var dTBC = document.getElementById("t-taxBeforeCess");
+var dTC = document.getElementById("t-taxCess");
+var dTt = document.getElementById("t-total");
+var dTIn = document.getElementById("d-taxableIncome");
 var dTt2 = document.getElementById("d-total2");
 
 var bN = [];
 
+// get all brackets to fill boxes
 for(let j=0;j<6;j++){
     bN[j] = document.getElementById("bracket"+j);
 }
 
-// var b20 = document.getElementById("bracket20");
-// var b30 = document.getElementById("bracket30");
-
-
-
 
 var slider = document.getElementById("incomeSlider");
 var incomeOut = document.getElementById("incomeOut");
-// incomeOut.innerHTML = slider.output;
-
-// var income = slider.value;
-
-//     calcTax(income);
 
 slider.oninput = function(){
     incomeOut.innerHTML = this.value;
@@ -137,8 +147,5 @@ slider.oninput = function(){
         bN[j].innerHTML = "";
     }
 
-    calcTax(this.value);
-    // calcTax();
-
-    
+    calcTax(this.value);   
 }
