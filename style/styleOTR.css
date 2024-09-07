@@ -144,6 +144,16 @@ div#footer > div.footer-bar > span.pills
     /* margin-top: 10px; */
 }
 
+.notInMobile{
+    margin-left :-50px;
+    width:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #4e8571;
+}
+
 .taxBracket{
     height: calc(var(--bracket-height)*10);
     /* width: 100px; */
@@ -219,7 +229,7 @@ div#footer > div.footer-bar > span.pills
 
 .gg{
     height: calc(var(--bracket-height));
-    width: calc(var(--bracket-width));
+    width: calc(var(--bracket-width) / 2);
     /* width: vw; */
     background-color: #00c573;
     color: #00c573;
@@ -229,7 +239,7 @@ div#footer > div.footer-bar > span.pills
 }
 .rr{
     height: calc(var(--bracket-height));
-    width: calc(var(--bracket-width));
+    width: calc(var(--bracket-width) / 2);
     border: .1vw solid rgb(143, 0, 0);
 
     background-color: #e33d3d;
@@ -248,6 +258,26 @@ div#footer > div.footer-bar > span.pills
 
 }
 
+#deductiblesList{
+    height: calc(var(--bracket-height) * 6);
+    overflow-y: scroll;
+}
+small{
+    color: #7c966b;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background: rgb(255, 180, 245);
+  }
+  ::-webkit-scrollbar-thumb{
+    background: var(--caret-color);
+    border: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background:green; 
+    
+  }
+
 .mGain{
     color: #009255;
 }
@@ -262,12 +292,16 @@ table{
 th{
     padding-left: 10px;
     border-bottom: 3px solid rgb(0, 53, 127);
+    border-top: 3px solid rgb(0, 53, 127);
 }
 td{
     padding-left: 10px;
     border-bottom: 1px solid rgb(168, 172, 255);
     
     /* align-items: center; */
+}
+td.noBorder{
+    border-bottom: none;
 }
 .rsn{
     text-align: start;
@@ -281,6 +315,13 @@ input[type="range"]{
     /* height:10px; */
 }
 
+.inputNum{
+    width: calc(100% - 10px);
+    /* accent-color: rgb(0, 97, 0); */
+    /* background: linear-gradient(to right,rgb(61, 255, 64),rgb(255, 0, 0)); */
+    /* height:10px; */
+}
+
 /* about sections */
 a{
     color: var(--caret-color);
@@ -289,16 +330,17 @@ a{
 #afterGraph{
     display: flex;
     flex-direction: row;
+    /* justify-content: space-between; */
 
 }
 
-/* #summary{ */
-    /* margin-left:50px; */
+#summary{
+    margin-left:50px;
     /* margin-right:20px; */
     /* width: 30vw; */
     /* margin-right: 50px; */
-        
-/* } */
+    /* float: right;        */
+}
 .notActive{
     background-color: var(--border-color);
     border: 2px solid var(--caret-color);
@@ -307,13 +349,18 @@ a{
 h1{
     color: var(--caret-color);
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
+.showOnMobile{
+    display: none;
+}
+
+
 
 @media all and (max-width: 800px) {
     :root{
-        --bracket-width: 16px ;
-        --bracket-height:14px;
+        --bracket-width: 11.3vw ;
+        --bracket-height:16px;
 
 
     }
@@ -329,6 +376,7 @@ h1{
     }
     #taxGS{
         margin-left:10px;
+        margin-right: 10px;
     }
     #graphBody{
         display: flex;
@@ -336,10 +384,32 @@ h1{
         margin-top: 10px;
     
     }
+    .taxBracket{
+        height: calc(var(--bracket-height)*25);
+    }
+    .moneySlider{
+        width: calc(var(--bracket-width) * 8);
+    
+    }
+    #summary{
+        margin-left:0px;
+    }
     #taxTXT{
-        width: 97%;
+        width: calc(100% - 20px);
         margin-left: 10px;
         margin-right:10px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #deductiblesList{
+        height: fit-content;
+        overflow: auto;
+        /* overflow-y: scroll; */
+    }
+
+    table{
+        width: 100%;
     }
     /* #summary{
         margin-left: 10px;
@@ -352,6 +422,9 @@ h1{
     }
     .z2{
         display: none !important; 
+    }
+    .notInMobile{
+        display: none;
     }
     /* #legend{
         margin-left:10px;
@@ -371,8 +444,23 @@ h1{
     .top-header-bar ul.top-header-menu li{
         padding: 2px 34px;
     }
-    .notActive{
+    /* .notActive{
         display: none;
         
+    } */
+    .navButton{
+        color: var(--text-color-light);
+        font-size: 11px;
+        padding: 5px 5px;
+        margin-left: 4px;
+        margin-right: 4px;
+        
+    
+    }
+    .notShowOnMobile{
+        display: none;
+    }
+    .showOnMobile{
+        display: inline;
     }
   }
